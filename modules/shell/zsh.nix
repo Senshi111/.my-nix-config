@@ -22,6 +22,7 @@
         clear-g = "sudo nix-collect-garbage -d";
         flake-u = "nix flake update";
         git-p = "git push -u -f origin main";
+        flat-u = "flatpak update";
       };
       ohMyZsh = {                             # Extra plugins for zsh
         enable = true;
