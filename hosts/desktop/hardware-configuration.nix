@@ -17,7 +17,7 @@
   fileSystems."/" =
     { device = "/dev/disk/by-label/nixos";
       fsType = "btrfs";
-      options = [ "subvol=@" "discard=async" ];
+#      options = [ "subvol=@" "discard=async" ];
     };
 
   fileSystems."/boot" =
