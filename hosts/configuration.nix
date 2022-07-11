@@ -6,18 +6,18 @@
 #   ├─ ./hosts
 #   │   └─ configuration.nix *
 #   └─ ./modules
-#       └─ ./editors
-#           └─ ./emacs
-#               └─ default.nix
+#       └─ ./shell
+#           └─ default.nix
 #
 
 { config, lib, pkgs, inputs, user, location, ... }:
 
 {
-#   imports =                                 # Import window or display manager.
-#     [
-#       ../modules/editors/emacs              # ! Comment this out on first install !
-#     ];
+   imports =                                 # Import window or display manager.
+     [
+       (import ../modules/shell/zsh.nix)             # ! Comment this out on first install !
+#       (import ../modules/shell/git.nix)             # ! Comment this out on first install !
+     ];
 
   users.users.${user} = {                   # System User
     isNormalUser = true;
@@ -54,9 +54,10 @@
       git
       killall
       nano
-      libsForQt5.applet-window-buttons
-      lightly-qt
-      libsForQt5.discover
+      firefox
+      google-chrome
+      oh-my-zsh
+      zsh
 #      pciutils
 #      usbutils
       wget

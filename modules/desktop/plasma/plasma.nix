@@ -52,6 +52,9 @@
     libsForQt5.kaccounts-providers
     libsForQt5.kio
     libsForQt5.kio-gdrive
+    libsForQt5.applet-window-buttons
+    lightly-qt
+    libsForQt5.discover
   ];
 }
 
