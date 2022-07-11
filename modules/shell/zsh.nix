@@ -14,7 +14,7 @@
       history.size = 10000;
       shellAliases = {
         ll = "ls -l";
-        update = "sudo nixos-rebuild switch --flake github:Senshi111/.setup#desktop";
+        update = "sudo nixos-rebuild switch --flake github:Senshi111/.my-nix-config#desktop";
         in-node = "nix-shell -p nodejs";
         clear-g = "sudo nix-collect-garbage -d";
         flake-u = "nix flake update";
