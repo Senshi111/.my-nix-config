@@ -82,7 +82,7 @@
       vscode = vscode-insider.overrideAttrs (oldAttrs: rec {
        src = (builtins.fetchTarball {
        url = "https://update.code.visualstudio.com/latest/linux-x64/insider";
-       sha256 = "177n85r57bcb26fm07nc9cc7zx6m97g6ylhlz4p30p4n7f748jx0";
+       sha256 = "0dqs12zflrdn9kni5wjag6d3599gnkxhayhcf93pcyw70y3ryi05";
     });
       version = "latest";
     });
