@@ -25,7 +25,7 @@
     shell = pkgs.zsh;                       # Default shell
   };
 #   security.sudo.wheelNeedsPassword = false; # User does not need to give password when using sudo.
-
+  virtualisation.libvirtd.enable = true;
   time.timeZone = "Europe/Belgrade";        # Time zone and internationalisation
   i18n = {
     defaultLocale = "en_US.UTF-8";
@@ -59,7 +59,7 @@
       slack
       skypeforlinux
       teams
-      viber
+#      viber
       discord
       vscode
       gnome.seahorse
