@@ -23,6 +23,7 @@
         flake-u = "nix flake update";
         git-p = "git push -u -f origin main";
         flat-u = "flatpak update";
+        ec = "cd ~/Documents/GitHub/ElderCounsel/web-platform"
       };
       ohMyZsh = {                             # Extra plugins for zsh
         enable = true;
