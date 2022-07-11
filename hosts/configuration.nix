@@ -47,6 +47,19 @@
 
   environment = {
     systemPackages = with pkgs; [           # Default packages install system-wide
+      usbimager
+      kazam           
+      ark
+      unrar
+      unzip
+      wget
+      curl
+      vlc
+      azuredatastudio
+      slack
+      skypeforlinux
+      teams
+      viber
       discord
       vscode
       gnome.seahorse
@@ -56,8 +69,13 @@
       nano
       firefox
       google-chrome
+      librewolf
+      librewolf-wayland
+      virt-manager
+      gparted
       oh-my-zsh
       zsh
+      gh
 #      pciutils
 #      usbutils
       wget
