@@ -76,6 +76,8 @@
       oh-my-zsh
       zsh
       gh
+      kwrite
+      kate
 #      pciutils
 #      usbutils
       wget
