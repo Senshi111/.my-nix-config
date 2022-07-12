@@ -15,6 +15,7 @@
 {
    imports =                                 # Import window or display manager.
      [
+       (import ../modules/services/flameshot.nix)
        (import ../modules/shell/zsh.nix)             # ! Comment this out on first install !
 #       (import ../modules/shell/git.nix)             # ! Comment this out on first install !
      ];
