@@ -151,9 +151,9 @@
   };
 
   nix = {                                   # Nix Package Manager settings
-  
-    autoOptimiseStore = true;               # Optimise syslinks
-  
+    settings ={
+      auto-optimise-store = true;           # Optimise syslinks
+    };
     gc = {                                  # Automatic garbage collection
       automatic = true;
       dates = "weekly";
