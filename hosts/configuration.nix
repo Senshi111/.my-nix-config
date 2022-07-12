@@ -15,7 +15,7 @@
 {
    imports =                                 # Import window or display manager.
      [
-       (import ../modules/services/flameshot.nix)
+#       (import ../modules/services/flameshot.nix)
        (import ../modules/shell/zsh.nix)             # ! Comment this out on first install !
 #       (import ../modules/shell/git.nix)             # ! Comment this out on first install !
      ];
@@ -79,6 +79,7 @@
       gh
       kwrited
       kate
+      flameshot
 #      pciutils
 #      usbutils
       wget
@@ -150,9 +151,9 @@
   };
 
   nix = {                                   # Nix Package Manager settings
-    settings ={
-      auto-optimise-store = true;           # Optimise syslinks
-    };
+  
+    autoOptimiseStore = true;               # Optimise syslinks
+  
     gc = {                                  # Automatic garbage collection
       automatic = true;
       dates = "weekly";
