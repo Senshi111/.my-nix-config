@@ -76,7 +76,7 @@
       oh-my-zsh
       zsh
       gh
-      kwrite
+      kwrited
       kate
 #      pciutils
 #      usbutils
