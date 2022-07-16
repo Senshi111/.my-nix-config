@@ -16,11 +16,13 @@
 let
   system = "x86_64-linux";                             	    # System architecture
 
-  pkgs = import nixpkgs {
-    inherit system;
-    config.allowUnfree = true;                              # Allow proprietary software
+  overlayModule =
+    {
+      nixpkgs.config.allowUnfree = true;                              # Allow proprietary software
+      nixpkgs.overlays = [
+        (import ./overlays.nix)
+      ];
   };
-
   lib = nixpkgs.lib;
 in
 {
@@ -31,6 +33,7 @@ in
       nur.nixosModules.nur
       ./desktop
       ./configuration.nix
+      overlayModule
     ];
   };
 
@@ -40,6 +43,7 @@ in
     modules = [
       ./laptop
       ./configuration.nix
+      overlayModule
     ];
   };
 }
