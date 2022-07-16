@@ -61,7 +61,10 @@
       skypeforlinux
       teams
 #      viber
+      screenfetch
+      krusader
       discord
+      gimp
       vscode
       gnome.seahorse
       libsecret

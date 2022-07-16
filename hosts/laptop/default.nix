@@ -27,10 +27,10 @@
   imports =                                     # For now, if applying to other system, swap files
     [(import ./hardware-configuration.nix)] ++            # Current system hardware config @ /etc/nixos/hardware-configuration.nix
     [(import ../../modules/desktop/plasma/plasma.nix)] ++   # Window Manager
-    [(import ../../modules/programs/steam.nix)];          # Gaming
+    [(import ../../modules/programs/steam.nix)] ++          # Gaming
 #     [(import ../../modules/services/media.nix)] ++        # Media Center
 #     (import ../../modules/desktop/virtualisation) ++      # Virtual Machines & VNC
-#    (import ../../modules/hardware);                      # Hardware devices
+    (import ../../modules/hardware);                      # Hardware devices
 
   boot = {                                      # Boot options
     kernelPackages = pkgs.linuxPackages_latest;
