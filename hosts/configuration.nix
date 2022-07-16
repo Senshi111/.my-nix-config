@@ -64,6 +64,7 @@
       discord
       vscode
       gnome.seahorse
+      libsecret
       vim
       git
       killall
