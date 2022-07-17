@@ -34,7 +34,7 @@
 
   boot = {                                      # Boot options
     kernelPackages = pkgs.linuxPackages_latest;
-    initrd.kernelModules = [ "nvidia" ];        # Video drivers
+#    initrd.kernelModules = [ "nvidia" ];        # Video drivers
 
     loader = {                                  # For legacy boot:
       systemd-boot = {
