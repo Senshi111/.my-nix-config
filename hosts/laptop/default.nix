@@ -44,8 +44,11 @@
       efi.canTouchEfiVariables = true;
       timeout = 5;                              # Grub auto select time
     };
+    initrd.checkJournalingFS = false;
   };
 
+  programs.dconf.enable = true;
+  programs.adb.enable = true;
 
   environment = {                               # Packages installed system wide
     systemPackages = with pkgs; [               # This is because some options need to be configured.
@@ -57,6 +60,27 @@
 #      vscodium
     ];
   };
+
+  hardware.opengl = {
+    enable = true;
+    driSupport32Bit = true;
+  };
+
+    # NVIDIA drivers are unfree;
+   hardware.nvidia.modesetting.enable = true;
+#   services.xserver.videoDrivers = [ "nvidia" ];
+
+  # Optionally, you may need to select the appropriate driver version for your specific GPU.
+   hardware.nvidia.package = config.boot.kernelPackages.nvidiaPackages.stable;
+   hardware.nvidia.prime = {
+     offload.enable = true;
+
+     # Bus ID of the Intel GPU. You can find it using lspci, either under 3D or VGA
+     intelBusId = "PCI:0:2:0";
+
+     # Bus ID of the NVIDIA GPU. You can find it using lspci, either under 3D or VGA
+     nvidiaBusId = "PCI:1:0:0";
+   };
 
   services = {
 

@@ -22,6 +22,7 @@
   boot.supportedFilesystems = [ "ntfs" ];
   users.users.${user} = {                   # System User
     isNormalUser = true;
+    home = "/home/${user}";
     extraGroups = [ "wheel" "video" "audio" "camera" "networkmanager" "lp" "scanner" "kvm" "libvirtd" "plex" ];
     shell = pkgs.zsh;                       # Default shell
   };
