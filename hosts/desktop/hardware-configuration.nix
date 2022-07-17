@@ -13,7 +13,7 @@
   boot.initrd.kernelModules = [ ];
   boot.kernelModules = [ "kvm-amd" ];
   boot.extraModulePackages = [ ];
-
+  boot.supportedFilesystems = [ "ntfs" ];
   fileSystems."/" =
     { device = "/dev/disk/by-label/nixos";
       fsType = "btrfs";
