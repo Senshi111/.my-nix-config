@@ -39,7 +39,7 @@ in
 
   laptop = lib.nixosSystem {                                # Laptop profile
     inherit system;
-    specialArgs = { inherit inputs user ; };
+    specialArgs = { inherit inputs user nur ;  };
     modules = [
       ./laptop
       ./configuration.nix
