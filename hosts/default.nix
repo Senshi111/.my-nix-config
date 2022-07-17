@@ -39,8 +39,9 @@ in
 
   laptop = lib.nixosSystem {                                # Laptop profile
     inherit system;
-    specialArgs = { inherit inputs user nur ;  };
+    specialArgs = { inherit inputs user ;  };
     modules = [
+      nur.nixosModules.nur
       ./laptop
       ./configuration.nix
       overlayModule
