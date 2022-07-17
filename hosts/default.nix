@@ -18,7 +18,7 @@ let
 
   overlayModule =
     {
-      nixpkgs.config.allowUnfree = true;                              # Allow proprietary software
+      nixpkgs.config.allowUnfree = true;                    # Allow proprietary software
       nixpkgs.overlays = [
         (import ./overlays.nix)
       ];

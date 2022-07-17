@@ -19,7 +19,7 @@
        (import ../modules/shell/zsh.nix)             # ! Comment this out on first install !
 #       (import ../modules/shell/git.nix)             # ! Comment this out on first install !
      ];
-  boot.supportedFilesystems = [ "ntfs" ];
+  
   users.users.${user} = {                   # System User
     isNormalUser = true;
     home = "/home/${user}";
