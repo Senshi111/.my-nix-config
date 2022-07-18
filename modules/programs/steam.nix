@@ -4,13 +4,13 @@
 # Do not forget to enable Steam play for all title in the settings menu
 #
 
-{ config, pkgs, nur, lib, ... }:
+{ config, pkgs, lib, ... }:
 
 {
   hardware.new-lg4ff.enable = true;             # Force Feedback Packaged myself :)
 
   environment.systemPackages = [
-    config.nur.repos.c0deaddict.oversteer       # Steering Wheel Configuration
+#    config.nur.repos.c0deaddict.oversteer       # Steering Wheel Configuration
     pkgs.lutris                                 # Game Launcher
   ];
 

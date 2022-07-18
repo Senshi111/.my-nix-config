@@ -9,12 +9,7 @@ final: prev: {
       version = "custom";
     }
   );
-  vscode = let
-    vscode-insider = prev.vscode.override {
-      isInsiders = false;
-    };
-  in
-    vscode-insider.overrideAttrs (oldAttrs: rec {
+  vscode = prev.vscode.overrideAttrs (oldAttrs: rec {
       src = builtins.fetchTarball {
         url = "https://update.code.visualstudio.com/latest/linux-x64/stable";
         sha256 = "0xv25j1pw3nwri1n2x0pqscr3q498xh970d7n9is42l4sii9hz0s";
