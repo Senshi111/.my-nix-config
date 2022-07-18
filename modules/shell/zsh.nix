@@ -17,7 +17,8 @@
 #      };
       shellAliases = {
         ll = "ls -l";
-        update = "sudo nixos-rebuild switch --flake github:Senshi111/.my-nix-config#desktop";
+        update-d = "sudo nixos-rebuild switch --flake github:Senshi111/.my-nix-config#desktop";
+        update-l = "sudo nixos-rebuild switch --flake github:Senshi111/.my-nix-config#laptop";
         in-node = "nix-shell -p nodejs";
         clear-g = "sudo nix-collect-garbage -d";
         flake-u = "nix flake update";

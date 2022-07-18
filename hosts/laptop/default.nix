@@ -37,18 +37,18 @@
 #    initrd.kernelModules = [ "nvidia" ];        # Video drivers
 
     loader = {                                  # For legacy boot:
-#      systemd-boot = {
-#        enable = true;
-#        configurationLimit = 5;                 # Limit the amount of configurations
-#      };
-#      efi.canTouchEfiVariables = true;
-#      timeout = 5;
-
-      grub.enable = true;
-      grub.devices = [ "nodev" ];
-      grub.efiInstallAsRemovable = true;
-      grub.efiSupport = true;
-      grub.useOSProber = true;                               # Grub auto select time
+      systemd-boot = {
+        enable = true;
+        configurationLimit = 5;                 # Limit the amount of configurations
+      };
+      efi.canTouchEfiVariables = true;
+      timeout = 5;
+      
+#      grub.enable = true;
+#      grub.devices = [ "nodev" ];
+#      grub.efiInstallAsRemovable = true;
+#      grub.efiSupport = true;
+#      grub.useOSProber = true;                               # Grub auto select time
     };
     initrd.checkJournalingFS = false;
   };
