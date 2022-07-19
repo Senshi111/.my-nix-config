@@ -12,7 +12,7 @@ final: prev: {
   vscode = prev.vscode.overrideAttrs (oldAttrs: rec {
       src = builtins.fetchTarball {
         url = "https://update.code.visualstudio.com/latest/linux-x64/stable";
-        sha256 = "0xv25j1pw3nwri1n2x0pqscr3q498xh970d7n9is42l4sii9hz0s";
+        sha256 = "16cddiixip2yvpvzx202damgs1rs2rswfh9ls7illkgisdpkn1b1";
       };
       version = "latest";
     });
