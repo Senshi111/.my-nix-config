@@ -89,6 +89,8 @@
 #      pciutils
 #      usbutils
       wget
+      vulkan-tools
+      lutris
     ];
   };
 

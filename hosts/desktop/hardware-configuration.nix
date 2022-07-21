@@ -40,6 +40,9 @@
   # high-resolution display
   hardware.video.hidpi.enable = lib.mkDefault true;
   hardware.bluetooth.enable = true;
+  hardware.opengl.driSupport32Bit = true;
+  hardware.opengl.enable = true;
+  hardware.steam-hardware.enable = true;
   networking = {
     useDHCP = false;                            # Deprecated
     hostName = "nixos";
