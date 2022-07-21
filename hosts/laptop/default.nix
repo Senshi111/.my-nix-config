@@ -33,7 +33,7 @@
 #    (import ../../modules/hardware);                      # Hardware devices
 
   boot = {                                      # Boot options
-    kernelPackages = pkgs.linuxPackages_latest;
+    kernelPackages = pkgs.linuxPackages_zen;
 #    initrd.kernelModules = [ "nvidia" ];        # Video drivers
 
     loader = {                                  # For legacy boot:

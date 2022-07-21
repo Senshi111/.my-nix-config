@@ -16,4 +16,11 @@ final: prev: {
       };
       version = "latest";
     });
+
+  brave = prev.brave.overrideAttrs (oldAttrs: rec {
+      src = builtins.fetchurl {
+        url = "https://github.com/brave/brave-browser/releases/download/v1.41.99/brave-browser_1.41.99_amd64.deb";
+        sha256 = "1n6ij90zrj2jr6cx4qrlik2i104jf3q64fcp46kdcqmckv57cs28";
+      };
+    });
 }

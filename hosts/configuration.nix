@@ -77,6 +77,7 @@
       google-chrome
       librewolf
       librewolf-wayland
+      brave
       virt-manager
       gparted
       oh-my-zsh
