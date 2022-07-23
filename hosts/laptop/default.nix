@@ -21,7 +21,7 @@
 #           └─ default.nix
 #
 
-{ pkgs, lib, user, ... }:
+{ config, pkgs, lib, user, ... }:
 
 {
   imports =                                     # For now, if applying to other system, swap files
@@ -55,7 +55,16 @@
   powerManagement.cpuFreqGovernor = "performance"; #"ondemand", "powersave", "performance"
   programs.dconf.enable = true;
   programs.adb.enable = true;
- 
+ programs = {                                  # Needed to succesfully start Steam
+    steam = {
+      enable = true;
+      #remotePlay.openFirewall = true;           # Ports for Stream Remote Play
+    };
+    gamemode.enable = true;                     # Better gaming performance
+                                                # Steam: Right-click game - Properties - Launch options: gamemoderun %command%
+                                                # Lutris: General Preferences - Enable Feral GameMode
+                                                #                             - Global options - Add Environment Variables: LD_PRELOAD=/nix/store/*-gamemode-*-lib/lib/libgamemodeauto.so
+  };
   environment = {                               # Packages installed system wide
     systemPackages = with pkgs; [               # This is because some options need to be configured.
 #      discord
@@ -64,6 +73,12 @@
 #      x11vnc
 #      wacomtablet
 #      vscodium
+(steam.override {
+    extraProfile = ''
+      unset VK_ICD_FILENAMES
+      export VK_ICD_FILENAMES=${config.hardware.nvidia.package}/share/vulkan/icd.d/nvidia_icd.json:${config.hardware.nvidia.package.lib32}/share/vulkan/icd.d/nvidia_icd32.json:$VK_ICD_FILENAMES
+    '';
+  })
     ];
   };
 

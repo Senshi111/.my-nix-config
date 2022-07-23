@@ -36,7 +36,23 @@
     ];
   };
 
-
+nixpkgs.config.packageOverrides = pkgs: {
+    steam = pkgs.steam.override {
+      extraPkgs = pkgs: with pkgs; [
+        gtk3
+        zlib
+        dbus
+        freetype
+        glib
+        atk
+        cairo
+        gdk-pixbuf
+        pango
+        fontconfig
+        xorg.libxcb
+      ];
+    };
+  };
 
   security.rtkit.enable = true;
   sound = {                                 # ALSA sound enable
