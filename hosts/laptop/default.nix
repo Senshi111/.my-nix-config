@@ -33,7 +33,7 @@
 #    (import ../../modules/hardware);                      # Hardware devices
 
   boot = {                                      # Boot options
-    kernelPackages = pkgs.linuxPackages_zen;
+    kernelPackages = pkgs.linuxPackages_lqx;
 #    initrd.kernelModules = [ "nvidia" ];        # Video drivers
 
     loader = {                                  # For legacy boot:
@@ -55,7 +55,7 @@
   powerManagement.cpuFreqGovernor = "performance"; #"ondemand", "powersave", "performance"
   programs.dconf.enable = true;
   programs.adb.enable = true;
- programs = {                                  # Needed to succesfully start Steam
+  programs = {                                  # Needed to succesfully start Steam
     steam = {
       enable = true;
       #remotePlay.openFirewall = true;           # Ports for Stream Remote Play
@@ -73,12 +73,12 @@
 #      x11vnc
 #      wacomtablet
 #      vscodium
-(steam.override {
-    extraProfile = ''
-      unset VK_ICD_FILENAMES
-      export VK_ICD_FILENAMES=${config.hardware.nvidia.package}/share/vulkan/icd.d/nvidia_icd.json:${config.hardware.nvidia.package.lib32}/share/vulkan/icd.d/nvidia_icd32.json:$VK_ICD_FILENAMES
-    '';
-  })
+       (steam.override {
+          extraProfile = ''
+            unset VK_ICD_FILENAMES
+            export VK_ICD_FILENAMES=${config.hardware.nvidia.package}/share/vulkan/icd.d/nvidia_icd.json:${config.hardware.nvidia.package.lib32}/share/vulkan/icd.d/nvidia_icd32.json:$VK_ICD_FILENAMES
+           '';
+       })
     ];
   };
 
